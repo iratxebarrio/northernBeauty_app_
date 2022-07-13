@@ -1,11 +1,48 @@
-header {
+header .title_header {
+  display: flex;
+  font-family: "Koulen", cursive;
+  justify-content: center;
+}
+header .title_header .logo_header {
+  margin: 25px 10px 0 0px;
+  height: 40px;
+}
+header .title_header h1 {
+  text-align: center;
+  margin-right: 80px;
+}
+header .nav_container {
   display: grid;
   grid-template-columns: 70% 30%;
+  align-items: center;
 }
-header .nav_menu {
+header .nav_container .nav_menu {
   display: flex;
 }
-header .user_img {
+header .nav_container .nav_menu li {
+  display: flex;
+  justify-content: end;
+  margin-right: 120px;
+  font-size: 20px;
+}
+header .nav_container .user_img {
   width: 20px;
   height: 20px;
+}
+
+.carousel_container {
+  padding-top: 30px;
+}
+.carousel_container .carousel .slider-wrapper {
+  width: 50%;
+}
+.carousel_container .carousel .thumb {
+  width: 5%;
+  height: 50px;
+}
+.carousel_container .carousel {
+  text-align: center;
+}
+.carousel_container .carousel .thumbs-wrapper {
+  width: 0;
 }/*# sourceMappingURL=App.css.map */

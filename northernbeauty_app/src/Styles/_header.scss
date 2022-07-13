@@ -1,14 +1,40 @@
 header {
-  display: grid;
-  grid-template-columns: 70% 30%;
+  
 
-  .nav_menu {
+
+  .title_header{
     display: flex;
+    font-family: 'Koulen', cursive;
+    justify-content: center;
+    .logo_header {
+      margin: 25px 10px 0 0px;
+      height: 40px;
+    }
 
+    h1 {
+      text-align: center;
+      margin-right: 80px;
+    }
   }
-
-  .user_img {
-    width: 20px;
-    height: 20px;
+  .nav_container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    .nav_menu {
+      display: flex;
+      
+      li {
+        display: flex;
+        justify-content: end;
+        margin-right: 120px;
+        font-size: 20px;
+      }
+      
+    }
+    
+    .user_img {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
