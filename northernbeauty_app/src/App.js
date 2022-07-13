@@ -1,7 +1,7 @@
 import '../src/Styles/App.scss'
 import Header from './Components/Header';
 import Slider from './Components/Slider';
-import ServiciosMain from './Components/Servicios/ServiciosMain';
+import ServicesMain from './Components/Servicios/ServicesMain';
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
    <Header />
    <Slider />
-   <ServiciosMain />
+   <ServicesMain />
     </>
   );
 }

@@ -45,4 +45,16 @@ header .nav_container .user_img {
 }
 .carousel_container .carousel .thumbs-wrapper {
   width: 0;
+}
+
+.service-text {
+  text-align: center;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.service-container .service-box {
+  border: 5px solid black;
 }/*# sourceMappingURL=App.css.map */
