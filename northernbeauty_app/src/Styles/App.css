@@ -1,0 +1,11 @@
+header {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+header .nav_menu {
+  display: flex;
+}
+header .user_img {
+  width: 20px;
+  height: 20px;
+}/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,14 @@
+header {
+  display: grid;
+  grid-template-columns: 70% 30%;
+
+  .nav_menu {
+    display: flex;
+
+  }
+
+  .user_img {
+    width: 20px;
+    height: 20px;
+  }
+}
