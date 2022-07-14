@@ -1,4 +1,4 @@
-import dataServices from "./dataServices"
+import {dataServices} from "../../constantes/consts"
 
 
 
@@ -10,10 +10,12 @@ const ServicesMain = () => {
                 {dataServices.map((service) => {
                     return (
                         <div className="service-box">
-                            <p>{service.title} </p>
-                            <p>{service.text}</p>
-                            <img src={service.img} alt="" />
-                            <button>{service.boton}</button>
+                            <p className="service-box-title">{service.title} </p>
+                            <p className="service-box-text">{service.text}</p>
+                            <div className="service-box-imgBut">
+                            <img className="service-box-img" src={service.img} alt="" />
+                            <button className="service-box-button">{service.boton}</button>
+                            </div>
                         </div>
                     )
                 })}
