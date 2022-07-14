@@ -11,7 +11,9 @@ return (
     <Carousel className='carousel_container' 
     showArrows= {false}
     infiniteLoop = {true} 
-    autoPlay = {true} >
+    autoPlay = {true}
+    showStatus = {false}
+     >
     <div>
         <img className='carousel_img' src= 'Images/slider1.jpg'/>
     </div>

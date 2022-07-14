@@ -1,0 +1,27 @@
+.aboutMain-title {
+    text-align: center;
+}
+
+.aboutMain-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    p {
+        line-height: 30px ;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    max-width: 60%;
+    margin: auto;
+
+    .img-beauty-salon-container {
+        text-align: center;
+
+    }
+
+    .img-beauty-salon {
+        width: 80%;
+
+    }
+}

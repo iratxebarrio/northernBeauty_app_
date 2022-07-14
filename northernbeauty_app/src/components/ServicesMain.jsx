@@ -1,4 +1,4 @@
-import {dataServices} from "../../constantes/consts"
+import {dataServices} from "../consts/consts"
 
 
 
@@ -7,9 +7,9 @@ const ServicesMain = () => {
         <>
             <p className="service-text">Conoce nuestros servicios</p>
             <div className="service-container">
-                {dataServices.map((service) => {
+                {dataServices.map((service, index) => {
                     return (
-                        <div className="service-box">
+                        <div key={index} className="service-box">
                             <p className="service-box-title">{service.title} </p>
                             <p className="service-box-text">{service.text}</p>
                             <div className="service-box-imgBut">

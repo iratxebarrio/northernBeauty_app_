@@ -52,9 +52,57 @@ header .nav_container .user_img {
 }
 
 .service-container {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 374px;
 }
 .service-container .service-box {
   border: 5px solid black;
+  height: 290px;
+  width: 504px;
+  margin: 0 30px 30px 0;
+}
+.service-container .service-box .service-box-title {
+  text-align: center;
+  font-size: 24px;
+}
+.service-container .service-box .service-box-text {
+  text-align: center;
+  font-size: 15px;
+}
+.service-container .service-box .service-box-imgBut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 34px;
+}
+.service-container .service-box .service-box-img {
+  width: 246px;
+  height: 164.13px;
+}
+.service-container .service-box .service-box-button {
+  margin: auto;
+}
+
+.aboutMain-title {
+  text-align: center;
+}
+
+.aboutMain-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  max-width: 60%;
+  margin: auto;
+}
+.aboutMain-container p {
+  line-height: 30px;
+  text-align: center;
+  margin-top: 100px;
+}
+.aboutMain-container .img-beauty-salon-container {
+  text-align: center;
+}
+.aboutMain-container .img-beauty-salon {
+  width: 80%;
 }/*# sourceMappingURL=App.css.map */

@@ -1,7 +1,8 @@
 import '../src/Styles/App.scss'
-import Header from './Components/Header';
-import Slider from './Components/Slider';
-import ServicesMain from './Components/Servicios/ServicesMain';
+import Header from './components/Header';
+import Slider from './components/Slider';
+import ServicesMain from './components/ServicesMain';
+import AboutMain from './components/AboutMain';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
    <Header />
    <Slider />
    <ServicesMain />
+   <AboutMain />
     </>
   );
 }
