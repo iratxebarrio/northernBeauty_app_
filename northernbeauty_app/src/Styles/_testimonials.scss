@@ -1,0 +1,22 @@
+.testimonials-title {
+    text-align: center;
+}
+
+.testimonials-container {
+    border: 2px solid green;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    max-width: 55%;
+  
+    .testimonial-box {
+
+        align-items: center;
+        .testimonial-box-imgContainer{
+          
+            
+            .testimonial-box-imgContainer-img {
+                width: 50px;
+            }
+        }
+    }
+}

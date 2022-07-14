@@ -105,4 +105,21 @@ header .nav_container .user_img {
 }
 .aboutMain-container .img-beauty-salon {
   width: 80%;
+}
+
+.testimonials-title {
+  text-align: center;
+}
+
+.testimonials-container {
+  border: 2px solid green;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  max-width: 55%;
+}
+.testimonials-container .testimonial-box {
+  align-items: center;
+}
+.testimonials-container .testimonial-box .testimonial-box-imgContainer .testimonial-box-imgContainer-img {
+  width: 50px;
 }/*# sourceMappingURL=App.css.map */
