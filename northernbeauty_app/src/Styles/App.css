@@ -21,9 +21,13 @@ header .nav_container .nav_menu {
 }
 header .nav_container .nav_menu li {
   display: flex;
-  justify-content: end;
-  margin-right: 120px;
+  margin-right: 70px;
   font-size: 20px;
+}
+header .nav_container .nav_menu li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  cursor: hand;
 }
 header .nav_container .user-container {
   display: flex;
@@ -39,6 +43,10 @@ header .nav_container .user-container p {
 header .nav_container .user-container .user_img {
   width: 19px;
   height: 19px;
+}
+header .nav_container .user-container:hover {
+  cursor: pointer;
+  cursor: hand;
 }
 
 .carousel_container {
@@ -162,6 +170,12 @@ header .nav_container .user-container .user_img {
   height: 20px;
   width: 20px;
 }
+.footer-container .pruebaArriba {
+  position: fixed;
+  z-index: 10px;
+  top: 10%;
+  right: 10%;
+}
 
 body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -179,4 +193,9 @@ h2::before {
 
 h2::after {
   content: "~";
+}
+
+button:hover {
+  cursor: pointer;
+  cursor: hand;
 }/*# sourceMappingURL=App.css.map */

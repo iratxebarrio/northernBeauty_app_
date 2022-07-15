@@ -16,16 +16,19 @@ header {
   }
   .nav_container {
     display: flex;
-   justify-content: space-between;
+    justify-content: space-between;
     align-items: center;
     .nav_menu {
       display: flex;
       
       li {
         display: flex;
-        justify-content: end;
-        margin-right: 120px;
+        margin-right: 70px;
         font-size: 20px;
+      }
+      li:hover {
+        text-decoration: underline;
+        cursor: pointer; cursor: hand;
       }
       
     }
@@ -35,6 +38,7 @@ header {
       background-color: $colorSecond;
       padding: 1px 5px 1px 5px;
       border-radius: 15px;
+
       p {
         padding-right: 5px;
         font-size: 20px;
@@ -44,6 +48,9 @@ header {
         height: 19px;
  
       }
+    }
+    .user-container:hover {
+      cursor: pointer; cursor: hand;
     }
   }
 }

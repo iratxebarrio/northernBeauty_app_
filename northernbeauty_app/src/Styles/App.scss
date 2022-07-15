@@ -23,3 +23,7 @@ h2::before {
 h2::after {
    content: "~";
 }
+
+button:hover {
+   cursor: pointer; cursor: hand;
+}

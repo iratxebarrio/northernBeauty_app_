@@ -5,7 +5,7 @@ import {dataServices} from "../consts/consts"
 const ServicesMain = () => {
     return (
         <>
-            <h2 className="service-text">Servicios</h2>
+            <h2  className="service-text">Servicios</h2>
             <div className="service-container">
                 {dataServices.map((service, index) => {
                     return (

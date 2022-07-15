@@ -11,5 +11,11 @@
         }
 
     }
+    .pruebaArriba {
+        position: fixed;
+        z-index: 10px;
+        top: 10%;
+        right: 10%;
+    }
 
 }
