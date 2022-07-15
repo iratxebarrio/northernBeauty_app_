@@ -1,7 +1,5 @@
+@import 'variables';
 header {
-  
-
-
   .title_header{
     display: flex;
     font-family: 'Koulen', cursive;
@@ -17,8 +15,8 @@ header {
     }
   }
   .nav_container {
-    display: grid;
-    grid-template-columns: 70% 30%;
+    display: flex;
+   justify-content: space-between;
     align-items: center;
     .nav_menu {
       display: flex;
@@ -31,10 +29,21 @@ header {
       }
       
     }
-    
-    .user_img {
-      width: 20px;
-      height: 20px;
+    .user-container {
+      display: flex;
+      align-items: center;
+      background-color: $colorSecond;
+      padding: 1px 5px 1px 5px;
+      border-radius: 15px;
+      p {
+        padding-right: 5px;
+        font-size: 20px;
+      }
+      .user_img {
+        width: 19px;
+        height: 19px;
+ 
+      }
     }
   }
 }

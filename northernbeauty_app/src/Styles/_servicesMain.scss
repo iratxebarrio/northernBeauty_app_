@@ -1,6 +1,6 @@
-.service-text {
-    text-align: center;
-}
+@import 'variables';
+
+
 .service-container {
     display: flex;
     flex-direction: row;
@@ -9,7 +9,7 @@
 
 
     .service-box {
-        border: 5px solid black;
+        border: 2px solid $colorSecond;
         height: 290px;
         width: 504px;
         margin: 0 30px 30px 0;
@@ -26,7 +26,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-top: 34px;
+            margin-top: 33px;
             
         }
         .service-box-img {

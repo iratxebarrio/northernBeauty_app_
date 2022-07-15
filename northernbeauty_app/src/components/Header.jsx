@@ -18,7 +18,9 @@ const Header = () => {
                 <li className="nav_menu_li">Contacto</li>
             </ul>
         </div>
-        <div className="user">
+        <div className="user-container">
+
+            <p>Inicia Sesión</p>
             <img className='user_img' src= '/Images/user.png' alt="" />
         </div>
         </div>

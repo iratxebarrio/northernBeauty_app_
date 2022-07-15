@@ -5,6 +5,8 @@ import ServicesMain from './components/ServicesMain';
 import AboutMain from './components/AboutMain';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
+
 
 
 
@@ -17,6 +19,7 @@ function App() {
    <AboutMain />
    <Testimonials />
    <Contact />
+   <Footer></Footer>
     </>
   );
 }

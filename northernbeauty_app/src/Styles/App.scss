@@ -4,11 +4,22 @@
 @import 'aboutMain';
 @import 'testimonials';
 @import 'contact';
-
+@import 'footer';
 @import 'variables';
 
 body {
    // font-family:'Courier New', Courier, monospace
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    background-color: $backgroundMain;
+}
+
+h2 {
+   text-align: center;
+   text-transform: uppercase;
+}
+h2::before {
+   content: "~";
+}
+h2::after {
+   content: "~";
 }

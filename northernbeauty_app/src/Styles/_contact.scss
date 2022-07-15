@@ -1,6 +1,4 @@
-.contact-title {
-    text-align: center;
-}
+
 .contact-container {
     display: flex;
     justify-content: space-around;
@@ -9,10 +7,12 @@
     }
     .contact-text  {
         text-align: center;
+        font-weight: bold;
 
     }
     .contact-text-contact{
         text-align: center;
-        line-height: 10px;
+        line-height: 8px;
+        font-size: 15px;
     }
 }

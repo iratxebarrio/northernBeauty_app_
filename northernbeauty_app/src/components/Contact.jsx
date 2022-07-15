@@ -14,11 +14,12 @@ const Contact = () => {
                     <p className="contact-text">{contact.text}</p>
                     <p className="contact-text-contact">{contact.contact}</p>
                     <p className="contact-text-contact">{contact.contact2}</p>
-
                 </div>
+                
             )
         })}
         </div>
+        <hr />
         </>
     )
 }
