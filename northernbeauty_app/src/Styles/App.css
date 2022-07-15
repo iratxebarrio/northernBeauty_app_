@@ -172,9 +172,8 @@ header .nav_container .user-container:hover {
 }
 .footer-container .pruebaArriba {
   position: fixed;
-  z-index: 10px;
-  top: 10%;
   right: 10%;
+  bottom: 0;
 }
 
 body {
