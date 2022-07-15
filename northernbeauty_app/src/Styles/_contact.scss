@@ -1,0 +1,18 @@
+.contact-title {
+    text-align: center;
+}
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    .contact-imgContainer{
+        text-align: center;
+    }
+    .contact-text  {
+        text-align: center;
+
+    }
+    .contact-text-contact{
+        text-align: center;
+        line-height: 10px;
+    }
+}

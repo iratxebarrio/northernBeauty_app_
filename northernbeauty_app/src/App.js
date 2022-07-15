@@ -4,6 +4,8 @@ import Slider from './components/Slider';
 import ServicesMain from './components/ServicesMain';
 import AboutMain from './components/AboutMain';
 import Testimonials from './components/Testimonials';
+import Contact from './components/Contact';
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
    <ServicesMain />
    <AboutMain />
    <Testimonials />
+   <Contact />
     </>
   );
 }

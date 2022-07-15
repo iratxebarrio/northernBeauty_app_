@@ -4,19 +4,30 @@
 
 .testimonials-container {
     border: 2px solid green;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    max-width: 55%;
+    display: flex;
+    //grid-template-columns: 50% 50%;
+    max-width: 100%;
+   justify-content: center;
+
   
     .testimonial-box {
-
+        max-width: 25%;
+        padding: 10px;
         align-items: center;
-        .testimonial-box-imgContainer{
-          
+        .testimonial-box-imgContainer {
+            text-align: center;
             
             .testimonial-box-imgContainer-img {
                 width: 50px;
             }
         }
+        .testimonial-box-text {
+            line-height: 30px;
+            font-family: 'Edu SA Beginner', cursive;            
+        }
+        .testimonial-box-name {
+            text-align: center;
+        }
+        
     }
 }

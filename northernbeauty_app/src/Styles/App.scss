@@ -3,3 +3,12 @@
 @import 'servicesMain';
 @import 'aboutMain';
 @import 'testimonials';
+@import 'contact';
+
+@import 'variables';
+
+body {
+   // font-family:'Courier New', Courier, monospace
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   background-color: $backgroundMain;
+}
