@@ -1,3 +1,5 @@
+@import 'variables';
+
 .footer-container {
     text-align: center;
     .footer-text {
@@ -11,11 +13,27 @@
         }
 
     }
-    .pruebaArriba {
+    .botonSubirContainer {
         position: fixed;
-  
-        right: 10%;
-        bottom: 0;
+        right: 3%;
+        bottom: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 2px solid $colorSecond;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding:1% ;
+        .botonSubir {
+            color: $colorSecond;
+            font-size: 15px;
+            font-weight: bold;
+       
+        }
+    }
+    .botonSubirContainer:hover {
+        cursor: pointer; cursor: hand;
     }
 
 }

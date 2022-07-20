@@ -3,7 +3,7 @@ import {Link} from 'react-scroll'
 
 const Header = () => {
     return (
-    <header>
+    <header className='header'>
         <div className='title_header'>
             <img className='logo_header' src='/Images/makeup.png' alt="" />
             <h1>Northern Beauty</h1>

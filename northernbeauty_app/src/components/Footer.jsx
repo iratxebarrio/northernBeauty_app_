@@ -1,3 +1,5 @@
+import {Link} from 'react-scroll'
+
 const Footer = () => {
     return (
         <>
@@ -8,8 +10,11 @@ const Footer = () => {
                     <img src="/Images/icons8-twitter-50.png" />
                     <img src="/Images/instagram.png" />
                 </div>
-               
-                    <p className="pruebaArriba">ARRIBA</p>
+                <Link activeClass="active" smooth spy to="header" >
+                <div className="botonSubirContainer">
+                    <p className="botonSubir">^</p>
+                </div>
+                </Link>
            
             </div>
         </>
