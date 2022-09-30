@@ -1,4 +1,4 @@
-import {dataContact} from "../consts/consts"
+import {dataContact} from '../../consts/consts'
 
 const Contact = () => {
     return (

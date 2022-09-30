@@ -1,11 +1,12 @@
 import '../src/Styles/App.scss'
 import Header from './components/Header';
-import Slider from './components/Slider';
-import ServicesMain from './components/ServicesMain';
-import AboutMain from './components/AboutMain';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
+import Slider from './components/PantallaPrincipal/Slider';
+import ServicesMain from './components/PantallaPrincipal/ServicesMain';
+import AboutMain from './components/PantallaPrincipal/AboutMain';
+import Testimonials from './components/PantallaPrincipal/Testimonials';
+import Contact from './components/PantallaPrincipal/Contact';
 import Footer from './components/Footer';
+import Login  from './components/Usuarios/Login';
 
 
 
@@ -20,6 +21,7 @@ function App() {
    <Testimonials />
    <Contact />
    <Footer></Footer>
+   <Login />
     </>
   );
 }

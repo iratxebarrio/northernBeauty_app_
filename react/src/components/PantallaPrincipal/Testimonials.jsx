@@ -1,4 +1,5 @@
-import {dataTestimonials} from "../consts/consts"
+import {dataTestimonials} from '../../consts/consts'
+
 
 const Testimonials = () => {
 return (

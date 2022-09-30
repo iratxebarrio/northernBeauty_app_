@@ -1,5 +1,4 @@
-import {dataServices} from "../consts/consts"
-
+import {dataServices} from '../../consts/consts'
 
 
 const ServicesMain = () => {
