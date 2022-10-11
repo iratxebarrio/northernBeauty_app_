@@ -34,7 +34,7 @@ const Header = () => {
         </div>
         <div className="user-container">
 
-            <button onClick={() =>  navigate('/login')}>Inicia Sesión</button>
+            <button className='button-inicia-sesion' onClick={() =>  navigate('/login')}>Inicia Sesión</button>
             <img className='user_img' src= '/Images/user.png' alt="" />
         </div>
         </div>
