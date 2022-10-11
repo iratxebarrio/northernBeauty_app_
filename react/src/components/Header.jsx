@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom'
 import {Link} from 'react-scroll'
 
 
 const Header = () => {
+
+    const navigate = useNavigate()
     return (
     <header className='header'>
         <div className='title_header'>
@@ -31,7 +34,7 @@ const Header = () => {
         </div>
         <div className="user-container">
 
-            <p>Inicia Sesión</p>
+            <button onClick={() =>  navigate('/login')}>Inicia Sesión</button>
             <img className='user_img' src= '/Images/user.png' alt="" />
         </div>
         </div>

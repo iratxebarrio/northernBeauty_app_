@@ -1,49 +1,82 @@
 header .title_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  font-family: "Koulen", cursive;
-  justify-content: center;
+  font-family: 'Koulen', cursive;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 header .title_header .logo_header {
   margin: 25px 10px 0 0px;
   height: 40px;
 }
+
 header .title_header h1 {
   text-align: center;
   margin-right: 80px;
 }
+
 header .nav_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-header .nav_container .nav_menu {
+
+header .nav_container .nav {
+  margin-left: 40px;
+}
+
+header .nav_container .nav .nav_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
-header .nav_container .nav_menu li {
+
+header .nav_container .nav .nav_menu li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 70px;
   font-size: 20px;
 }
-header .nav_container .nav_menu li:hover {
+
+header .nav_container .nav .nav_menu li:hover {
   text-decoration: underline;
   cursor: pointer;
   cursor: hand;
 }
+
 header .nav_container .user-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #d0b0d4;
   padding: 1px 5px 1px 5px;
   border-radius: 15px;
+  margin-right: 40px;
 }
+
 header .nav_container .user-container p {
   padding-right: 5px;
   font-size: 20px;
 }
+
 header .nav_container .user-container .user_img {
   width: 19px;
   height: 19px;
 }
+
 header .nav_container .user-container:hover {
   cursor: pointer;
   cursor: hand;
@@ -52,107 +85,155 @@ header .nav_container .user-container:hover {
 .carousel_container {
   padding-top: 30px;
 }
+
 .carousel_container .carousel .slider-wrapper {
   width: 50%;
 }
+
 .carousel_container .carousel .thumb {
   width: 5%;
   height: 50px;
 }
+
 .carousel_container .carousel {
   text-align: center;
 }
+
 .carousel_container .carousel .thumbs-wrapper {
   width: 0;
 }
 
 .service-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-left: 374px;
 }
+
 .service-container .service-box {
   border: 2px solid #d0b0d4;
   height: 290px;
   width: 504px;
   margin: 0 30px 30px 0;
 }
+
 .service-container .service-box .service-box-title {
   text-align: center;
   font-size: 24px;
 }
+
 .service-container .service-box .service-box-text {
   text-align: center;
   font-size: 15px;
 }
+
 .service-container .service-box .service-box-imgBut {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-top: 33px;
 }
+
 .service-container .service-box .service-box-img {
   width: 246px;
   height: 164.13px;
 }
+
 .service-container .service-box .service-box-button {
   margin: auto;
+  background-color: #d0b0d4;
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px;
 }
 
 .aboutMain-container {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 50% 50%;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
   max-width: 60%;
   margin: auto;
 }
+
 .aboutMain-container p {
   line-height: 30px;
   text-align: center;
   margin-top: 100px;
 }
+
 .aboutMain-container .img-beauty-salon-container {
   text-align: center;
 }
+
 .aboutMain-container .img-beauty-salon {
   width: 80%;
 }
 
 .testimonials-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .testimonials-container .testimonial-box {
   max-width: 25%;
   padding: 10px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .testimonials-container .testimonial-box .testimonial-box-imgContainer {
   text-align: center;
 }
+
 .testimonials-container .testimonial-box .testimonial-box-imgContainer .testimonial-box-imgContainer-img {
   width: 50px;
 }
+
 .testimonials-container .testimonial-box .testimonial-box-text {
   line-height: 30px;
-  font-family: "Edu SA Beginner", cursive;
+  font-family: 'Edu SA Beginner', cursive;
 }
+
 .testimonials-container .testimonial-box .testimonial-box-name {
   text-align: center;
 }
 
 .contact-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
+
 .contact-container .contact-imgContainer {
   text-align: center;
 }
+
 .contact-container .contact-text {
   text-align: center;
   font-weight: bold;
 }
+
 .contact-container .contact-text-contact {
   text-align: center;
   line-height: 8px;
@@ -162,22 +243,215 @@ header .nav_container .user-container:hover {
 .footer-container {
   text-align: center;
 }
+
 .footer-container .footer-text {
   font-size: 14px;
 }
+
 .footer-container .footer-img-container img {
   padding-left: 30px;
   height: 20px;
   width: 20px;
 }
-.footer-container .pruebaArriba {
+
+.footer-container .botonSubirContainer {
   position: fixed;
-  right: 10%;
+  right: 3%;
+  bottom: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid #d0b0d4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1%;
+}
+
+.footer-container .botonSubirContainer .botonSubir {
+  color: #d0b0d4;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.footer-container .botonSubirContainer:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.login-title {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.imgCruz {
+  margin-left: 307px;
+  width: 16px;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: rgba(141, 108, 148, 0.5);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .user-box {
+  position: relative;
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.login-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.login-box a span {
+  position: absolute;
+  display: block;
+}
+
+.login-box a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#03e9f4));
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  -webkit-animation: btn-anim1 1s linear infinite;
+          animation: btn-anim1 1s linear infinite;
+}
+
+.login-box a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#03e9f4));
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  -webkit-animation: btn-anim2 1s linear infinite;
+          animation: btn-anim2 1s linear infinite;
+  -webkit-animation-delay: .25s;
+          animation-delay: .25s;
+}
+
+.login-box a span:nth-child(3) {
   bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#03e9f4));
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  -webkit-animation: btn-anim3 1s linear infinite;
+          animation: btn-anim3 1s linear infinite;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+@-webkit-keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+
+.login-box a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#03e9f4));
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  -webkit-animation: btn-anim4 1s linear infinite;
+          animation: btn-anim4 1s linear infinite;
+  -webkit-animation-delay: .75s;
+          animation-delay: .75s;
+}
+
+.user-submit {
+  text-align: center;
+}
+
+.login-button {
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+}
+
+.login-button:hover {
+  cursor: pointer;
 }
 
 body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: #eedef0;
 }
 
@@ -197,4 +471,5 @@ h2::after {
 button:hover {
   cursor: pointer;
   cursor: hand;
-}/*# sourceMappingURL=App.css.map */
+}
+/*# sourceMappingURL=App.css.map */
