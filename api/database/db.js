@@ -1,10 +1,11 @@
-import { Sequelize } from "sequelize";
 
-const db = new Sequelize('database_app', 'root', '', {
+
+const Sequelize = require('sequelize')
+
+db = new Sequelize('northern_beauty', 'root', 'dawilerna', {
     host: 'localhost',
     dialect: 'mysql'
-} )
+} );
 
-//nombre bbdd, usuario, password 
-
-export default db
+//nombre bbdd, usuario, password
+exports.db = db
