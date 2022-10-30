@@ -1,7 +1,7 @@
 const express = require('express');
 const {connectDB} = require("./src/database/db")
 let prueba = require("./src/routes/routes")
-let register = require("./src/routes/register")
+let register = require("./src/routes/auth")
 let cors = require('cors')
 
 //inicialización
@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(cors())
 
 app.use('/prueba',prueba)
-app.use('/register', register)
+app.use('/user', register)
 
 app.use('/', (req, res)=> {
     //   res.render('index', { title: 'Express' });

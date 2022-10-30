@@ -8,9 +8,11 @@ SELECT * FROM usuarios;
 CREATE TABLE usuarios (
 _id varchar(9) PRIMARY KEY,
 nombre varchar(40) NOT NULL,
-apellido varchar(40),
-telefono int(9),
-edad int(2)
+apellidos varchar(40) NOT NULL,
+username varchar(10) NOT NULL,
+email varchar(20) NOT NULL,
+telefono int(9) NOT NULL,
+password varchar (10) NOT NULL
 );
 
 -- para eliminar los campos de una tabla

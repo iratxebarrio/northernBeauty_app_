@@ -36,13 +36,19 @@ const Register = () => {
   
   }
  
-  console.log(name)
-  console.log(lastName)
-  console.log(userName)
-  console.log(email)
-  console.log(phone)
-  console.log(password)
+function fetchRegistro() {
 
+  fetch('http://localhost:8000/user/register', {
+    method: 'POST',
+    body: JSON.stringify({ name, lastName, userName, email, phone, password }),
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
+})
+.then(response => response.json())
+.then(response => console.log(response))
+}
 
 
   return (
@@ -77,8 +83,8 @@ const Register = () => {
           
         </div>
         <div className="user-submit">
-          <input type="submit" className="login-button" />
-        </div>
+          <button onClick={fetchRegistro} >Enviar</button>
+        </div>  
       </form>
       <h6>Si ya estas registrada <a onClick={() =>  navigate('/login')} href='#'>haz click aqui.</a></h6>
     </div>
