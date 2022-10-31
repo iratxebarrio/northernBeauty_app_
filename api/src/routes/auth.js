@@ -15,18 +15,9 @@ router.get('/', (req, res)=> {
 
     //REGISTRO
 router.post('/register', async (req, res) => {
-    const {name, lastName, userName, email, phone, password} = req.body
-    // const name = req.body.name;
-    // const lastName = req.body.lastName;
-    // const userName = req.body.userName;
-    // const email = req.body.email;
-    // const phone = req.body.phone;
-    // const password = req.body.password;
-    
-    try {
-        //  let contraseinaCifrada =  bcrypt.hashSync( password, 10 );
-        // console.log('cont', contraseinaCifrada)
+    const {name, lastName, userName, email, phone, password} = req.body;
 
+    try {
         await Usuario.create({
             nombre: name,
             apellidos: lastName,
@@ -38,12 +29,21 @@ router.post('/register', async (req, res) => {
     } catch(error) {
         throw error;
     }
-
-
-
-    
- 
-    
 })
+
+//COMPROBAR USUARIO REGISTRADO CON EL LOGIN
+
+router.post('/login', async (req, res) => {
+    const {userName, password} = req.body;
+    const usuario = await Usuario.findAll({where : {username: userName}})
+    if(usuario.length === 0) {
+        console.log('Not found')
+    } else {
+        console.log(usuario, 'hola')
+    }
+})
+
+
+
 
 module.exports = router

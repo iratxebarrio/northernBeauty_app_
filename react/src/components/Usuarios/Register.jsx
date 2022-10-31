@@ -31,7 +31,7 @@ const Register = () => {
     //al rellenar el input entra en esta funcion con el valor de name=""
     //console.log(event.target.name) --> nombre
     const action = actions[event.target.name] // guarda en la const action guarda del objeto action la que tenga la clave nombre
-    console.log(action)
+  
     if (action) action(event.target.value) //si existe action llamas a la funcion action (es funcion porque dentro tiene asociada la clave nombre que tiene como valor una funcion) y se ejecuta esa funcion --> actualiza name
   
   }

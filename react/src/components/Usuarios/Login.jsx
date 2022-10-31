@@ -8,22 +8,35 @@ const Login = () => {
 const navigate = useNavigate()
 
 let [userName, setUserName] = useState("");
+let [password, setPassword] = useState('')
 
-function loginUserName(event) {
-    setUserName(event.target.value)
+
+
+const actions = {
+    username: (valor) => setUserName(valor),
+    password: (valor) => setPassword(valor)
 }
 
-// EN FETCH -> El método POST el body siempre como objeto.
+const doAction = (event) => {
+    const action = actions[event.target.name]
+    console.log(action)
+    if (action) action(event.target.value)
+    console.log(userName)
+}
+
+
+
 
 function fetchUserName(){
-    fetch('http://localhost:8000/prueba/loginUsuario', {
+    fetch('http://localhost:8000/user/login', {
         method: 'POST',
-        body: JSON.stringify({ userName }),
+        body: JSON.stringify({ userName, password }),
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         }
     })
+    
     .then(response => response.json())
     .then(response => console.log(response))
 }
@@ -36,11 +49,11 @@ function fetchUserName(){
             <h3 className="login-title">Login</h3>
             <form>
                 <div className="user-box">
-                    <input onChange={loginUserName} type="text" name="" required="true" placeholder="Username" value={userName} />
+                    <input onChange={doAction} type="text" name="username" required="true" placeholder="Username" value={userName} />
                         
                 </div>
                     <div className="user-box">
-                        <input type="password" name="" required="true" placeholder="Password"/>
+                        <input onChange={doAction} type="password" name="password" required="true" placeholder="Password"/>
                            
                     </div>
                     <div className="user-submit">
