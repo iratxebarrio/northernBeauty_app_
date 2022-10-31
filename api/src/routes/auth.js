@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 const {db} = require('../database/db');
-
+//  const bcrypt = require('bcrypt')
 
 const Usuario = require('../models/models')
 
@@ -16,17 +16,32 @@ router.get('/', (req, res)=> {
     //REGISTRO
 router.post('/register', async (req, res) => {
     const {name, lastName, userName, email, phone, password} = req.body
-    console.log(name)
+    // const name = req.body.name;
+    // const lastName = req.body.lastName;
+    // const userName = req.body.userName;
+    // const email = req.body.email;
+    // const phone = req.body.phone;
+    // const password = req.body.password;
+    
+    try {
+        //  let contraseinaCifrada =  bcrypt.hashSync( password, 10 );
+        // console.log('cont', contraseinaCifrada)
 
-    await Usuario.create({
-        _id: '1',
-        nombre: name,
-        apellidos: lastName,
-        username: userName,
-        email: email,
-        telefono: phone,
-        password: password
-    })
+        await Usuario.create({
+            nombre: name,
+            apellidos: lastName,
+            username: userName,
+            email: email,
+            telefono: phone,
+            password: password
+        })
+    } catch(error) {
+        throw error;
+    }
+
+
+
+    
  
     
 })
