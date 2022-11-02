@@ -1,6 +1,5 @@
 const express = require('express');
 const {connectDB} = require("./src/database/db")
-let prueba = require("./src/routes/routes")
 let register = require("./src/routes/auth")
 let cors = require('cors')
 
@@ -18,7 +17,8 @@ connectDB();
 app.use(express.json())
 app.use(cors())
 
-app.use('/prueba',prueba)
+//ROUTES
+
 app.use('/user', register)
 
 app.use('/', (req, res)=> {

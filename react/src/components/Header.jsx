@@ -1,10 +1,19 @@
+import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import {Link} from 'react-scroll'
 
 
 const Header = () => {
+    const usuarioLogeado = localStorage.getItem('userName')
 
+    console.log(usuarioLogeado, 'user')
     const navigate = useNavigate()
+
+    const cerrarSesion = () => {
+        localStorage.removeItem('userName')
+        return navigate('/despedida')
+    }
+  
     return (
     <header className='header'>
         <div className='title_header'>
@@ -33,8 +42,15 @@ const Header = () => {
             </ul>
         </div>
         <div className="user-container">
-
-            <button className='button-inicia-sesion' onClick={() =>  navigate('/login')}>Inicia Sesión</button>
+            {
+                usuarioLogeado
+                ? <button className='button-inicia-sesion' onClick={cerrarSesion}>
+                    Cerrar Sesión
+                </button>
+                : <button onClick={() => navigate('/login')} className='button-inicia-sesion'>
+                    Inicia Sesión
+                </button>
+            }
             <img className='user_img' src= '/Images/user.png' alt="" />
         </div>
         </div>

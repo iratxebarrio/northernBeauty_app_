@@ -9,6 +9,7 @@ const navigate = useNavigate()
 
 let [userName, setUserName] = useState("");
 let [password, setPassword] = useState('')
+let [okLogin, setOkLogin] = useState('')
 
 
 
@@ -19,9 +20,24 @@ const actions = {
 
 const doAction = (event) => {
     const action = actions[event.target.name]
-    console.log(action)
     if (action) action(event.target.value)
-    console.log(userName)
+}
+
+const onSubmit = (event) => {
+    //evita que se ejecute la acción por defecto del boton (enviar los datos)
+    event.preventDefault()
+    fetchUserName()
+}
+
+const responseLogin = (response) => {
+    const { ok, userName } = response
+    console.log({ ok, userName })
+    if (!ok) setOkLogin('Login incorrecto')
+    else {
+        localStorage.setItem('userName', userName) //guarda el valor en localStorage
+        return navigate('/bienvenida')
+    }
+    
 }
 
 
@@ -38,7 +54,8 @@ function fetchUserName(){
     })
     
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => responseLogin(response))
+     
 }
   
     return (
@@ -57,11 +74,12 @@ function fetchUserName(){
                            
                     </div>
                     <div className="user-submit">
-                        <button onClick={fetchUserName} >Enviar</button>
+                        <button onClick={onSubmit} >Enviar</button>
                     </div>             
             </form>
-
             <h6>Si no estas registrada <a onClick={() =>  navigate('/registro')} href='#'>haz click aqui.</a></h6>
+            <h6 className="loginError">{okLogin}</h6>
+            
         </div>
         </>
      )
