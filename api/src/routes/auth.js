@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 const bcrypt = require('bcrypt')
 
-const Usuario = require('../models/models')
+const {Usuario} = require('../models/models')
 
 /* GET home page. */
 router.get('/', (req, res)=> {

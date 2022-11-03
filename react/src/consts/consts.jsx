@@ -1,18 +1,18 @@
 export const dataServices = [
     {
-        title: "Tratamiento faciales",
+        title: "Tratamiento facial",
         text: "Cuida de tu piel regularmente, es vital para sentirte saludable.",
         img: 'Images/service-main/facial.jpg',
         boton: "Saber más"
     },
     {
-        title: "Tratamiento corporales",
+        title: "Tratamiento corporal",
         text: "Cuida de tu cuerpo es fundamental para senrite joven, saludable y relajada",
         img: 'Images/service-main/masaje.jpg',
         boton: "Saber más"
     },
     {
-        title: "Manicura",
+        title: "Manicura y Pedicura",
         text: "Tener las uñas bien cuidadas es de vital importancia",
         img: 'Images/service-main/manicura.jpg',
         boton: "Saber más"

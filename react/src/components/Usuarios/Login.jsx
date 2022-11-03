@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router';
 import Header from '../Header';
+import LoadingSpinner from "../Spinner/LoadingSpinner";
 
 
 
@@ -11,6 +12,7 @@ let [userName, setUserName] = useState("");
 let [password, setPassword] = useState('')
 let [okLogin, setOkLogin] = useState('')
 
+const [isLoading, setIsLoading] = useState(false);
 
 
 const actions = {
@@ -44,6 +46,7 @@ const responseLogin = (response) => {
 
 
 function fetchUserName(){
+    setIsLoading(true);
     fetch('http://localhost:8000/user/login', {
         method: 'POST',
         body: JSON.stringify({ userName, password }),
@@ -54,13 +57,20 @@ function fetchUserName(){
     })
     
     .then(response => response.json())
-    .then(response => responseLogin(response))
+    .then(response => {
+        responseLogin(response)
+        setIsLoading(false)
+    })
+    .catch(() => {
+        setIsLoading(false);
+     });
      
 }
   
     return (
         <>
         <Header />
+        {isLoading ? <LoadingSpinner /> : 
         <div className='login_container login-box'>
             <a onClick={() =>  navigate('/')} href="#"><img className="imgCruz" src="Images/marca-x.png" alt="" /></a>
             <h3 className="login-title">Login</h3>
@@ -74,13 +84,14 @@ function fetchUserName(){
                            
                     </div>
                     <div className="user-submit">
-                        <button onClick={onSubmit} >Enviar</button>
+                        <button onClick={onSubmit} disabled={isLoading} >Enviar</button>
                     </div>             
             </form>
             <h6>Si no estas registrada <a onClick={() =>  navigate('/registro')} href='#'>haz click aqui.</a></h6>
             <h6 className="loginError">{okLogin}</h6>
             
         </div>
+            }
         </>
      )
 }
