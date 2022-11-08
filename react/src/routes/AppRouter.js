@@ -18,7 +18,7 @@ const AppRouter = () => {
           <Route path="/registro" element={<Register />} />
           <Route path="/bienvenida" element={<Bienvenida />} />
           <Route path="/despedida" element={<Despedida />} />
-          <Route path="/reservas" element={<PaginaReservas />} />
+          <Route path="/reservas/:id" element={<PaginaReservas />} />
 
           </Routes>
       </BrowserRouter>
