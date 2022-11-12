@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import { useNavigate } from 'react-router';
 import Header from '../Header';
 import LoadingSpinner from "../Spinner/LoadingSpinner";
@@ -37,7 +37,7 @@ const responseLogin = (response) => {
     if (!ok) setOkLogin('Login incorrecto')
     else {
         localStorage.setItem('userName', userName) //guarda el valor en localStorage
-        return navigate('/bienvenida')
+        return navigate('/')
     }
     
 }
@@ -70,6 +70,7 @@ function fetchUserName(){
     return (
         <>
         <Header />
+      
         {isLoading ? <LoadingSpinner /> : 
         <div className='login_container login-box'>
             <a onClick={() =>  navigate('/')} href="#"><img className="imgCruz" src="Images/marca-x.png" alt="" /></a>

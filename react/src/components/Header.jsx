@@ -11,7 +11,9 @@ const Header = () => {
 
     const cerrarSesion = () => {
         localStorage.removeItem('userName')
-        return navigate('/despedida')
+        window.location.reload(true);
+        // return navigate('/')
+        
     }
   
     return (
@@ -42,6 +44,19 @@ const Header = () => {
             </ul>
         </div>
         <div className="user-container">
+            {   
+            usuarioLogeado 
+            ?
+            
+            <div className='container-boton-reservas-usuario'>
+                <span>{usuarioLogeado}</span>
+                <button className='boton-reservas-usuario'>Reservas </button>
+                <span className='span-reservas-usuario'>   |</span>
+            </div> 
+            :
+            ''
+            }
+            
             {
                 usuarioLogeado
                 ? <button className='button-inicia-sesion' onClick={cerrarSesion}>

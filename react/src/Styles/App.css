@@ -83,12 +83,19 @@ header .nav_container .user-container:hover {
   cursor: hand;
 }
 
+header .nav_container .boton-reservas-usuario {
+  background-color: rgba(0, 128, 0, 0);
+  border: none;
+  padding: 10px;
+}
+
 .carousel_container {
   padding-top: 30px;
 }
 
 .carousel_container .carousel .slider-wrapper {
   width: 50%;
+  border-radius: 30px;
 }
 
 .carousel_container .carousel .thumb {
@@ -119,6 +126,7 @@ header .nav_container .user-container:hover {
 
 .service-container .service-box {
   border: 2px solid #d0b0d4;
+  border-radius: 20px;
   height: 290px;
   width: 504px;
   margin: 0 30px 30px 0;
@@ -148,8 +156,10 @@ header .nav_container .user-container:hover {
 }
 
 .service-container .service-box .service-box-img {
-  width: 246px;
-  height: 164.13px;
+  width: 180px;
+  height: auto;
+  margin: -11px 0 50px 56px;
+  border-radius: 25px;
 }
 
 .service-container .service-box .service-box-button {
@@ -181,6 +191,21 @@ header .nav_container .user-container:hover {
 
 .aboutMain-container .img-beauty-salon {
   width: 80%;
+  border-radius: 25px;
+}
+
+@media (max-width: 1280px) {
+  .img-beauty-salon-container {
+    text-align: center;
+  }
+  .aboutMain-title {
+    margin-bottom: -30px;
+  }
+  .img-beauty-salon {
+    width: 80%;
+    border-radius: 25px;
+    margin-top: 112px;
+  }
 }
 
 .testimonials-container {
@@ -216,6 +241,7 @@ header .nav_container .user-container:hover {
 
 .testimonials-container .testimonial-box .testimonial-box-name {
   text-align: center;
+  font-size: 13px;
 }
 
 .contact-container {
@@ -523,6 +549,57 @@ header .nav_container .user-container:hover {
   border-radius: 50%;
   -webkit-animation: spinner 1.5s linear infinite;
           animation: spinner 1.5s linear infinite;
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 250px;
+}
+
+.reservarContainerAll {
+  margin: auto;
+  margin-top: 100px;
+  width: 400px;
+  padding: 40px;
+  background: rgba(141, 108, 148, 0.5);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  position: relative;
+}
+
+.reservarContainerAll .reserva_container {
+  text-align: center;
+}
+
+.reservarContainerAll .reserva_container .imgCruzReservas {
+  margin-left: 307px;
+  width: 16px;
+}
+
+.reservarContainerAll .reserva_container .fecha_reserva {
+  background-color: rgba(161, 155, 161, 0.767);
+  text-align: center;
+  height: 20px;
+  font-size: 15px;
+}
+
+.reservarContainerAll .reserva_container .fecha_reserva:hover {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.reservarContainerAll .reserva_container .boton_reservar {
+  margin-top: 20px;
+  padding: 7px;
+  border-radius: 5px;
+  background-color: rgba(161, 155, 161, 0.767);
+  padding: 10px;
 }
 
 body {

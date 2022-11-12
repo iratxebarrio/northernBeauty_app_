@@ -58,5 +58,11 @@ header {
     .user-container:hover {
       cursor: pointer; cursor: hand;
     }
+  
+    .boton-reservas-usuario {
+      background-color: rgba(0, 128, 0, 0);
+      border: none;
+      padding: 10px;
+    }
   }
 }

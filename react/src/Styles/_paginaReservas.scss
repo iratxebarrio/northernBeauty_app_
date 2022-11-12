@@ -1,0 +1,36 @@
+
+.reservarContainerAll {
+    margin: auto;
+    margin-top: 100px;
+    width: 400px;
+    padding: 40px;
+    background: rgba(141, 108, 148, 0.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    position: relative;
+    .reserva_container {
+        .imgCruzReservas {
+            margin-left: 307px;
+            width: 16px;
+      
+          }
+        text-align: center;
+        .fecha_reserva {
+            background-color: rgba(161, 155, 161, 0.767);
+            text-align: center;
+            height: 20px;
+            font-size: 15px;
+        }
+        .fecha_reserva:hover {
+            cursor: pointer; cursor: hand;
+        }
+          .boton_reservar {
+              margin-top: 20px;
+              padding: 7px;
+              border-radius: 5px;
+              background-color: rgba(161, 155, 161, 0.767);
+              padding: 10px;
+          }
+    }
+}

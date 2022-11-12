@@ -33,6 +33,14 @@ precio float (6,2) NOT NULL
 INSERT INTO servicios (nombre, descripcion, precio)
 VALUES ('Tratamiento facial', 'Limpieza completa con Ultrasonidos + Hidrodermoabrasión', 21.90);
 
+-- PARA AÑADIR UN CAMPO NUEVO A LA TABLA SIN TENER QUE ELIMINARLA Y CREARLA DE NUEVO
+ALTER TABLE SERVICIOS ADD IMG VARCHAR(50)
+
+-- PARA ACTUALIZAR LA INFO DE UN CAMPO CONCRETO DE LA TABLA
+update servicios set img = 'citas.png' where nombre = 'Tratamiento facial';
+
+
+
 --crear tabla reservas
 CREATE TABLE reservas (
 usuario_id int (9),
