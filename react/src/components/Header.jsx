@@ -49,8 +49,8 @@ const Header = () => {
             ?
             
             <div className='container-boton-reservas-usuario'>
-                <span>{usuarioLogeado}</span>
-                <button className='boton-reservas-usuario'>Reservas </button>
+                <span className='user-logueado'>{usuarioLogeado}</span>
+                <button onClick={() => navigate('/reservas-usuario')} className='boton-reservas-usuario'>Reservas </button>
                 <span className='span-reservas-usuario'>   |</span>
             </div> 
             :

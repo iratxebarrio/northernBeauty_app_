@@ -76,6 +76,8 @@ header .nav_container .user-container .button-inicia-sesion {
   background-color: rgba(0, 128, 0, 0);
   border: none;
   padding: 10px;
+  font-family: sans-serif;
+  font-size: 13px;
 }
 
 header .nav_container .user-container:hover {
@@ -83,10 +85,16 @@ header .nav_container .user-container:hover {
   cursor: hand;
 }
 
+header .nav_container .user-logueado {
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
 header .nav_container .boton-reservas-usuario {
   background-color: rgba(0, 128, 0, 0);
   border: none;
   padding: 10px;
+  font-family: sans-serif;
 }
 
 .carousel_container {

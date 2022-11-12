@@ -11,9 +11,6 @@ const ServicesMain = () => {
     return navigate(`/reservas/${id}`);
   };
 
-
-
-
   const getServices = async () => {
     await fetch("http://localhost:8000/services/view-services", {
       method: "GET",
@@ -30,22 +27,22 @@ const ServicesMain = () => {
                 <p className="service-box-text">{service.descripcion}</p>
                 <p className="service-box-text">{service.precio}</p>
                 <div className="service-box-imgBut">
-                <img
+                  <img
                     className="service-box-img"
                     src={"/Images/service-main/" + service.img}
                     alt=""
                   />
-        
 
-
-                
-                {usuarioLogeado ? (
-                  <button className='service-box-button' onClick={() => getReservar(service._id)}>
-                    Reservar
-                  </button>
-                ) : (
-                  ""
-                )}
+                  {usuarioLogeado ? (
+                    <button
+                      className="service-box-button"
+                      onClick={() => getReservar(service._id)}
+                    >
+                      Reservar
+                    </button>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
             );
@@ -60,7 +57,12 @@ const ServicesMain = () => {
     getServices();
   }, []);
 
-  return <div className="service-container">{service}</div>;
+  return (
+    <>
+      <h2 className="service-title">Servicios</h2>
+      <div className="service-container">{service}</div>;
+    </>
+  );
 };
 
 export default ServicesMain;

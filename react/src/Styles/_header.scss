@@ -52,17 +52,25 @@ header {
           background-color: rgba(0, 128, 0, 0);
           border: none;
           padding: 10px;
+          font-family:   sans-serif;
+          font-size: 13px;
           
       }
     }
     .user-container:hover {
       cursor: pointer; cursor: hand;
     }
+    .user-logueado {
+      font-family:   sans-serif;
+      font-size: 13px;
+    }
   
     .boton-reservas-usuario {
       background-color: rgba(0, 128, 0, 0);
       border: none;
       padding: 10px;
+      font-family:   sans-serif;
+      
     }
   }
 }
