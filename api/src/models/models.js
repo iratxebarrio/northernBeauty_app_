@@ -88,6 +88,12 @@ const Reservas = db.define('reservas', {
     }
 },{ timestamps: false })
 
+Reservas.hasOne(Servicio, {
+    foreignKey: '_id'
+})
+
+
+
 module.exports = {Usuario, Servicio, Reservas};
 
 //se definen los tipos de datos que se van a utilizar en la BBDD

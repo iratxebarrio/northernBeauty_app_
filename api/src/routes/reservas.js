@@ -1,7 +1,8 @@
 let express = require("express");
 let router = express.Router();
+const sequelize = require('sequelize')
 
-const { Reservas, Usuario } = require("../models/models");
+const { Reservas, Usuario, Servicio } = require("../models/models");
 
 //CREAR RESERVAS A PARTIR DEL ID DEL SERVICIO Y DEL ID DEL USUARIO
 router.post("/crear-reserva", async (req, res) => {
@@ -54,9 +55,33 @@ router.post("/mostrar-reservas", async (req, res) => {
 });
 
 //EXTRAER NOMBRE Y DESCRIPCIÓN DE SERVICIOS RESERVADOS PARA MOSTRAR  EN VisualizarReservas.jsx
-router.post ('servicios-reservas', async (req, res) => {
-    try {
+router.post ("/servicios-reservas", async (req, res) => {
+  const {reservasCreadas, usuarioLogeado} = req.body;
 
+  try {
+
+    const usuario = await Usuario.findOne({
+      where: { username: usuarioLogeado },
+      raw: true
+    });
+    const reservas = await Reservas.findAll({
+      where: {usuario_id: usuario._id},
+      raw: true
+    })
+
+    let arrayReservas = []
+    for (const reserva of reservas) {
+      const r = await Servicio.findOne({
+        where: {
+          _id: reserva.servicio_id
+        },
+        raw: true
+      })
+      arrayReservas.push({ reserva, r })
+    }
+    console.log(arrayReservas, 'reservas')
+ 
+    res.send(reservasCreadas) 
     } catch (error) {
   throw error;
 }
