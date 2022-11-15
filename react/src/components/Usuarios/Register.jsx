@@ -18,6 +18,7 @@ const Register = () => {
   let [email, setEmail] = useState('')
   let [phone, setPhone] = useState('')
   let [password, setPassword] = useState('')
+  let [okRegistro, setOkRegistro] = useState('')
 
   const actions = {
     nombre: (valor) => setName(valor),
@@ -31,9 +32,24 @@ const Register = () => {
     //al rellenar el input entra en esta funcion con el valor de name=""
     //console.log(event.target.name) --> nombre
     const action = actions[event.target.name] // guarda en la const action guarda del objeto action la que tenga la clave nombre
-    console.log(action)
+  
     if (action) action(event.target.value) //si existe action llamas a la funcion action (es funcion porque dentro tiene asociada la clave nombre que tiene como valor una funcion) y se ejecuta esa funcion --> actualiza name
   
+  }
+
+  const onSubmit = (event) => {
+    //evita que se ejecute la acción por defecto del boton (enviar los datos)
+    event.preventDefault()
+    fetchRegistro()
+}
+
+  const responseRegister = (response) => {
+    const { ok } = response
+    if (!ok) setOkRegistro('ya existe el username')
+    else {
+        return navigate('/login')
+    }
+    
   }
  
 function fetchRegistro() {
@@ -47,7 +63,7 @@ function fetchRegistro() {
     }
 })
 .then(response => response.json())
-.then(response => console.log(response))
+.then(response => responseRegister(response))
 }
 
 
@@ -83,10 +99,11 @@ function fetchRegistro() {
           
         </div>
         <div className="user-submit">
-          <button onClick={fetchRegistro} >Enviar</button>
+          <button onClick={onSubmit} >Enviar</button>
         </div>  
       </form>
       <h6>Si ya estas registrada <a onClick={() =>  navigate('/login')} href='#'>haz click aqui.</a></h6>
+      <h6 className="loginError">{okRegistro}</h6>
     </div>
     </div>
     </>

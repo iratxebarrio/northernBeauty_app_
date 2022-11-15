@@ -1,9 +1,8 @@
 let express = require('express');
 let router = express.Router();
-const {db} = require('../database/db');
-//  const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt')
 
-const Usuario = require('../models/models')
+const {Usuario} = require('../models/models')
 
 /* GET home page. */
 router.get('/', (req, res)=> {
@@ -15,25 +14,37 @@ router.get('/', (req, res)=> {
 
     //REGISTRO
 router.post('/register', async (req, res) => {
-    const {name, lastName, userName, email, phone, password} = req.body
-    // const name = req.body.name;
-    // const lastName = req.body.lastName;
-    // const userName = req.body.userName;
-    // const email = req.body.email;
-    // const phone = req.body.phone;
-    // const password = req.body.password;
-    
-    try {
-        //  let contraseinaCifrada =  bcrypt.hashSync( password, 10 );
-        // console.log('cont', contraseinaCifrada)
+    const {name, lastName, userName, email, phone, password} = req.body;
 
-        await Usuario.create({
-            nombre: name,
-            apellidos: lastName,
-            username: userName,
-            email: email,
-            telefono: phone,
-            password: password
+    try {
+        const newUser = await Usuario.findOne({where : {username: userName}})
+        if (!newUser) {
+            await Usuario.create({
+                nombre: name,
+                apellidos: lastName,
+                username: userName,
+                email: email,
+                telefono: phone,
+                password: password
+            }
+            )
+            res.status(200).send({ok: true, msg: 'usuario creado'})
+        } else return res.status(400).send({ok: false, msg: 'el username ya existe'});
+
+    } catch(error) {
+        throw error;
+    }
+})
+
+//COMPROBAR LOGIN
+router.post('/login', async (req, res, error) => {
+    const {userName, password} = req.body;
+    try {
+        const usuario = await Usuario.findAll({where : {username: userName}})
+        if(!usuario.length) return res.status(401).send({ok: false, msg: 'Login incorrecto'});
+        bcrypt.compare(password, usuario[0].dataValues.password, (err, result) => {
+            if(result) return res.status(200).send({ok:true, userName: userName});
+            else return res.status(401).send({ok: false, msg: 'Login incorrecto'});
         })
     } catch(error) {
         throw error;
@@ -41,9 +52,18 @@ router.post('/register', async (req, res) => {
 
 
 
-    
- 
-    
+
+
+
+
+
 })
+
+
+
+
+
+
+
 
 module.exports = router

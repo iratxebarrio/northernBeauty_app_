@@ -45,7 +45,56 @@ Usuario.beforeCreate(async (user, options) => {
    })
     });
 
-module.exports = Usuario;
+
+const Servicio = db.define('servicios', {
+    _id: {
+        type: DataTypes.INTEGER(9),
+        autoIncrement: true,
+        primaryKey: true
+    },
+    nombre: {
+        type: DataTypes.STRING(40),
+        allowNull: false
+    },
+    descripcion: {
+        type: DataTypes.STRING(500),
+        allowNull: false
+    },
+    precio: {
+        type: DataTypes.FLOAT(6,2),
+        allowNull: false
+    },
+    img:{
+       type: DataTypes.STRING(50),
+        allowNull: true 
+    }
+}, { timestamps: false }) 
+//quitar de la consulta createAt y updateAt
+
+const Reservas = db.define('reservas', {
+    usuario_id: {
+        type: DataTypes.INTEGER(9),
+        primaryKey: true
+    },
+    servicio_id: {
+        type: DataTypes.INTEGER(9),
+        primaryKey: true
+    },
+    fecha: {
+        type: DataTypes.DATE(),
+    },
+    estado: {
+        type: DataTypes.STRING(10)
+    }
+},{ timestamps: false })
+
+Reservas.hasOne(Servicio, {
+    foreignKey: '_id'
+})
+
+
+
+module.exports = {Usuario, Servicio, Reservas};
 
 //se definen los tipos de datos que se van a utilizar en la BBDD
 //se pueden añadir diferentes campos, type, si es null, si es primaryKey, si se autoincrementa..
