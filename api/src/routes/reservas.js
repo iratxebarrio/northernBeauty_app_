@@ -71,17 +71,17 @@ router.post ("/servicios-reservas", async (req, res) => {
 
     let arrayReservas = []
     for (const reserva of reservas) {
-      const r = await Servicio.findOne({
+      const servicioReservado = await Servicio.findOne({
         where: {
           _id: reserva.servicio_id
         },
         raw: true
       })
-      arrayReservas.push({ reserva, r })
+      arrayReservas.push({ reserva, servicioReservado })
     }
-    console.log(arrayReservas, 'reservas')
+  
  
-    res.send(reservasCreadas) 
+    res.send(arrayReservas) 
     } catch (error) {
   throw error;
 }
