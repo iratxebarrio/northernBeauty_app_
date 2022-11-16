@@ -47,7 +47,7 @@ const VisualizarReservas = () => {
     //catch entra cuando hay error de API o BBDD
   };
 
-  const pruebaEliminar = (usuarioId, servicioId) => {
+  const eliminarReserva = (usuarioId, servicioId) => {
     console.log(servicioId, 'ser', usuarioId, 'user')
     setServicioId(servicioId)
     setUsuarioId(usuarioId)
@@ -78,21 +78,19 @@ const VisualizarReservas = () => {
                     alt=""
                   />
                   <div>
-                    <button onClick={() => navigate("/modificar-reserva")}>
-                      Modificar reserva
-                    </button>
-                    {/* <button
+                  <button
                       onClick={() =>
                         navigate(
-                          `/eliminar-reserva/${reserva.reserva.usuario_id}/${reserva.reserva.servicio_id}`
+                          `/modificar-reserva/${reserva.reserva.usuario_id}/${reserva.reserva.servicio_id}}`
                         )
                       }
                     >
-                      Eliminar reserva
-                    </button> */}
+                      Modificar reserva
+                    </button> 
+
                     <button
                      
-                      onClick={() => pruebaEliminar(reserva.reserva.usuario_id,reserva.reserva.servicio_id )}
+                      onClick={() => eliminarReserva(reserva.reserva.usuario_id,reserva.reserva.servicio_id )}
                     >
                       Eliminar Reserva
                     </button>

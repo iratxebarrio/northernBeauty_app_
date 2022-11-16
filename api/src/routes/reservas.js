@@ -97,7 +97,42 @@ router.post('/eliminar-reserva', async(req, res) => {
       usuario_id: usuario_id,
       servicio_id: servicio_id
     }})
+
     res.send({msg: 'Reserva eliminada correctamente.'})
+
+  }catch (error) {
+  throw error;
+}
+
+})
+
+//MODIFICAR RESERVA
+router.post('/modificar-reserva', async(req, res) => {
+  const  {usuario_id, servicio_id, startDate} = req.body
+
+  try {
+    // const actualizarReserva = await Reservas.findOne({
+    //   where: { 
+    //     usuario_id: usuario_id,
+    //     servicio_id: servicio_id,
+    //    }
+    // });
+    // actualizarReserva.upadte = ({
+    //   fecha: startDate,
+    //   estado: 'actualizado'
+    // })
+    // await actualizarReserva.save();
+    await Reservas.update({
+      fecha: startDate,
+      estado: 'actualizado'
+    },{
+      where: {
+        usuario_id: usuario_id,
+        servicio_id: servicio_id
+      }}
+    )
+    
+    res.send({msg: 'Reserva actualizada correctamente.'})
 
   }catch (error) {
   throw error;

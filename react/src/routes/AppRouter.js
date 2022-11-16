@@ -24,7 +24,7 @@ const AppRouter = () => {
           <Route path="/despedida" element={<Despedida />} />
           <Route path="/reservas/:id" element={<PaginaReservar />} />
           <Route path="/reservas-usuario" element={<VisualizarReservas />} />
-          <Route path="/modificar-reserva" element={<ModificarReserva />} />
+          <Route path="/modificar-reserva/:usuario_id/:servicio_id/" element={<ModificarReserva />} />
 
 
           </Routes>
