@@ -71,20 +71,38 @@ router.post ("/servicios-reservas", async (req, res) => {
 
     let arrayReservas = []
     for (const reserva of reservas) {
-      const r = await Servicio.findOne({
+      const servicioReservado = await Servicio.findOne({
         where: {
           _id: reserva.servicio_id
         },
         raw: true
       })
-      arrayReservas.push({ reserva, r })
+      arrayReservas.push({ reserva, servicioReservado })
     }
-    console.log(arrayReservas, 'reservas')
+  
  
-    res.send(reservasCreadas) 
+    res.send(arrayReservas) 
     } catch (error) {
   throw error;
 }
+})
+
+
+//ELIMINAR RESERVA
+router.post('/eliminar-reserva', async(req, res) => {
+  const  {usuario_id, servicio_id} = req.body
+
+  try {
+    await Reservas.destroy({where: {
+      usuario_id: usuario_id,
+      servicio_id: servicio_id
+    }})
+    res.send({msg: 'Reserva eliminada correctamente.'})
+
+  }catch (error) {
+  throw error;
+}
+
 })
 
 module.exports = router

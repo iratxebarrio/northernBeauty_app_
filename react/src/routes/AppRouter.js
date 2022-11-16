@@ -7,6 +7,9 @@ import Bienvenida from '../components/Usuarios/Bienvenida';
 import Despedida from '../components/Usuarios/Despedida';
 import PaginaReservar from '../components/Reservas/PaginaReservar';
 import VisualizarReservas from '../components/Reservas/VisualizarReservas'
+import ModificarReserva from '../components/Reservas/ModificarReserva';
+
+
 
 
 
@@ -21,6 +24,8 @@ const AppRouter = () => {
           <Route path="/despedida" element={<Despedida />} />
           <Route path="/reservas/:id" element={<PaginaReservar />} />
           <Route path="/reservas-usuario" element={<VisualizarReservas />} />
+          <Route path="/modificar-reserva" element={<ModificarReserva />} />
+
 
           </Routes>
       </BrowserRouter>
