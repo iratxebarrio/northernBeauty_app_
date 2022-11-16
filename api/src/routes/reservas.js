@@ -87,5 +87,23 @@ router.post ("/servicios-reservas", async (req, res) => {
 }
 })
 
+
+//ELIMINAR RESERVA
+router.post('/eliminar-reserva', async(req, res) => {
+  const  {usuario_id, servicio_id} = req.body
+
+  try {
+    await Reservas.destroy({where: {
+      usuario_id: usuario_id,
+      servicio_id: servicio_id
+    }})
+    res.send({msg: 'Reserva eliminada correctamente.'})
+
+  }catch (error) {
+  throw error;
+}
+
+})
+
 module.exports = router
 

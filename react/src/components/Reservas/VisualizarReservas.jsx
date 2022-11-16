@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ModalEliminarReserva from "../Modal/ModalEliminarReserva";
 
 const VisualizarReservas = () => {
   //Recoge username y lo guarda
@@ -8,9 +9,13 @@ const VisualizarReservas = () => {
   const [reserva, setReserva] = useState([]);
   const navigate = useNavigate();
 
+  const [isOpen, setIsOpen] = useState(false);
+  const [usuarioId, setUsuarioId] = useState('')
+  const [servicioId, setServicioId] = useState('')
+  
+
   //enviar al back petición con username para recoger las reservas de la bbdd
   const mostrarReservas = async () => {
-
     return await fetch("http://localhost:8000/reservas/mostrar-reservas", {
       method: "POST",
       body: JSON.stringify({ usuarioLogeado }),
@@ -42,6 +47,12 @@ const VisualizarReservas = () => {
     //catch entra cuando hay error de API o BBDD
   };
 
+  const pruebaEliminar = (usuarioId, servicioId) => {
+    console.log(servicioId, 'ser', usuarioId, 'user')
+    setServicioId(servicioId)
+    setUsuarioId(usuarioId)
+    setIsOpen(true)
+  }
   useEffect(() => {
     //Ejecuta la funcion mostrarReservas
     //ejecuta el then (significa que lo hace despues xq es asincrono)
@@ -55,7 +66,7 @@ const VisualizarReservas = () => {
           infoReservas.map((reserva) => {
             return (
               <>
-                <div className='reserva-card'>
+                <div className="reserva-card">
                   <h3>{reserva.servicioReservado.nombre}</h3>
                   <p> Precio: {reserva.servicioReservado.precio} €</p>
                   <p> Fecha: {reserva.reserva.fecha}</p>
@@ -66,10 +77,26 @@ const VisualizarReservas = () => {
                     }
                     alt=""
                   />
-                <div>
-                  <button onClick={() =>  navigate('/modificar-reserva')}>Modificar reserva</button>
-                  <button onClick={() =>  navigate(`/eliminar-reserva/${reserva.reserva.usuario_id}/${reserva.reserva.servicio_id}`)}>Eliminar reserva</button>
-                </div>
+                  <div>
+                    <button onClick={() => navigate("/modificar-reserva")}>
+                      Modificar reserva
+                    </button>
+                    {/* <button
+                      onClick={() =>
+                        navigate(
+                          `/eliminar-reserva/${reserva.reserva.usuario_id}/${reserva.reserva.servicio_id}`
+                        )
+                      }
+                    >
+                      Eliminar reserva
+                    </button> */}
+                    <button
+                     
+                      onClick={() => pruebaEliminar(reserva.reserva.usuario_id,reserva.reserva.servicio_id )}
+                    >
+                      Eliminar Reserva
+                    </button>
+                  </div>
                 </div>
               </>
             );
@@ -79,15 +106,13 @@ const VisualizarReservas = () => {
       });
     });
   }, []);
-
  
 
   return (
     <>
       <h2>Reservas</h2>
-      <div className="reservas-creadas-container">
-        {reserva}
-      </div>
+      <div className="reservas-creadas-container">{reserva}</div>
+      {isOpen && <ModalEliminarReserva setIsOpen={setIsOpen} usuario_id={usuarioId} servicio_id={servicioId}  />}
     </>
   );
 };
