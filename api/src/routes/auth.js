@@ -37,8 +37,9 @@ router.post('/register', async (req, res) => {
 })
 
 //COMPROBAR LOGIN
-router.post('/login', async (req, res, error) => {
-    const {userName, password} = req.body;
+router.get('/login/:username/:password', async (req, res, error) => {
+    const userName = req.params.username;
+    const password = req.params.password;
     try {
         const usuario = await Usuario.findAll({where : {username: userName}})
         if(!usuario.length) return res.status(401).send({ok: false, msg: 'Login incorrecto'});

@@ -47,13 +47,8 @@ const responseLogin = (response) => {
 
 function fetchUserName(){
     setIsLoading(true);
-    fetch('http://localhost:8000/user/login', {
-        method: 'POST',
-        body: JSON.stringify({ userName, password }),
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
+    fetch(`http://localhost:8000/user/login/${userName}/${password}`, {
+        method: 'GET',
     })
     
     .then(response => response.json())
