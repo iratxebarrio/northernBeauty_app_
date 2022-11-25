@@ -32,7 +32,8 @@ const PaginaReservar = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => setServicio(data));
+      .then((data) => setServicio(data)
+      );
   };
 
 
@@ -51,7 +52,8 @@ const PaginaReservar = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => setServicio(data));
+      .then((data) => setServicio(data),
+      navigate('/reservas-usuario'));
   };
 
   return (

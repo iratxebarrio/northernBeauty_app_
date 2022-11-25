@@ -1,9 +1,10 @@
 import React from "react";
 import { RiCloseLine } from "react-icons/ri";
+import { useNavigate } from "react-router";
 
 const ModalEliminarReserva = ({ setIsOpen, usuario_id, servicio_id}) => {
   
-
+  const navigate = useNavigate();
     const eliminarReserva = async () => {
         setIsOpen(false)
         return await fetch("http://localhost:8000/reservas/eliminar-reserva", {
@@ -16,7 +17,7 @@ const ModalEliminarReserva = ({ setIsOpen, usuario_id, servicio_id}) => {
           })
             .then((res) => res.json())
             .then((response) => 
-            window.location.replace('/reservas-usuario')
+            navigate('/reservas-usuario')
             );
     }
   return (

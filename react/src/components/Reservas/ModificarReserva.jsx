@@ -1,4 +1,5 @@
 import {React, useEffect, useState} from 'react'
+import { useNavigate } from "react-router";
 import { useParams } from "react-router";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -11,13 +12,13 @@ const ModificarReserva = () => {
   const {usuario_id, servicio_id} = useParams()
   const [startDate, setStartDate] = useState(new Date());
   console.log(startDate)
-
+  const navigate = useNavigate();
 
 
   const modificarReserva = async () => {
-
+    console.log(usuario_id, servicio_id, startDate, 'prueba')
     return await fetch("http://localhost:8000/reservas/modificar-reserva", {
-        method: "POST",
+        method: "PUT",
         body: JSON.stringify({ usuario_id, servicio_id, startDate }),
         headers: {
           Accept: "application/json",
@@ -26,12 +27,19 @@ const ModificarReserva = () => {
       })
         .then((res) => res.json())
         .then((response) => 
-        window.location.replace('/reservas-usuario')
+        navigate('/reservas-usuario')
         );
 }
     return (
-        <div>
-            <DatePicker
+      <>
+      <Header/>
+      <div className="reservarContainerAll">
+        <div className="reserva_container">
+
+          <p className="elegirFecha_reserva">
+            Elige la fecha para tu reserva:{" "}
+          </p>
+          <DatePicker
             className="fecha_reserva"
             locale="es"
             selected={startDate}
@@ -42,6 +50,8 @@ const ModificarReserva = () => {
             Actualizar
           </button>
         </div>
+      </div>
+      </>
     )
 }
 

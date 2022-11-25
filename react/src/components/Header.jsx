@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import {Link} from 'react-scroll'
+import AboutMain from "./PantallaPrincipal/AboutMain";
 
 
 const Header = () => {
@@ -26,21 +27,25 @@ const Header = () => {
 
         <div className="nav">
             <ul className="nav_menu">
-                <li className="nav_menu_li">Inicio</li>
-                <Link activeClass="active" smooth spy to="service-text" >
+            <NavLink activeClass="active" smooth spy to="/" style={{textDecoration: 'none', color: 'black'}} >
+                <li className="nav_menu_li">
+                    Inicio
+                </li> 
+                </NavLink>
+            <NavLink activeClass="active" smooth spy to="/" style={{textDecoration: 'none', color: 'black'}} >
                 <li className="nav_menu_li">
                     Servicios
                 </li> 
-                </Link>
-                <Link activeClass="active" smooth spy to="aboutMain-title" >
-                <li className="nav_menu_li">Nuestro equipo</li>
-                </Link>
-                <Link activeClass="active" smooth spy to="testimonials-title" >
+                </NavLink>
+                <NavLink activeClass="active" smooth spy to="/" style={{textDecoration: 'none', color: 'black'}} >
+                <li  className="nav_menu_li">Nuestro equipo</li>
+                </NavLink>
+                <NavLink activeClass="active" smooth spy to="/" style={{textDecoration: 'none', color: 'black'}} >
                 <li className="nav_menu_li">Testimonios</li>
-                </Link>
-                <Link activeClass="active" smooth spy to="contact-title" >
+                </NavLink>
+                <NavLink activeClass="active" smooth spy to="/" style={{textDecoration: 'none', color: 'black'}} >
                 <li className="nav_menu_li">Contacto</li>
-                </Link>
+                </NavLink>
             </ul>
         </div>
         <div className="user-container">
@@ -49,7 +54,8 @@ const Header = () => {
             ?
             
             <div className='container-boton-reservas-usuario'>
-                <span className='user-logueado'>{usuarioLogeado}</span>
+                <span className='user-logueado'>{usuarioLogeado}    </span>
+                <span className='span-reservas-usuario'>      |</span>
                 <button onClick={() => navigate('/reservas-usuario')} className='boton-reservas-usuario'>Reservas </button>
                 <span className='span-reservas-usuario'>   |</span>
             </div> 

@@ -29,8 +29,9 @@ router.post("/crear-reserva", async (req, res) => {
 
 //MOSTRAR RESERVAS SEGUN EL USERNAME GUARDADO EN LOCALSTORAGE
 
-router.post("/mostrar-reservas", async (req, res) => {
-  const { usuarioLogeado } = req.body;
+router.get("/mostrar-reservas/:username", async (req, res) => {
+  const  usuarioLogeado = req.params.username;
+  //console.log(usuarioLogeado, 'reqqq')
   let idUser = "";
   try {
     const usuario = await Usuario.findAll({
@@ -105,19 +106,25 @@ router.post('/eliminar-reserva', async(req, res) => {
 }
 
 })
+ 
 
 //MODIFICAR RESERVA
-router.post('/modificar-reserva', async(req, res) => {
+router.put('/modificar-reserva', async(req, res) => {
   const  {usuario_id, servicio_id, startDate} = req.body
-
+  
   try {
+    console.log(startDate, 'serviciooo')
+    console.log(usuario_id, 'usuario')
+    console.log(servicio_id, 'servicio')
     // const actualizarReserva = await Reservas.findOne({
     //   where: { 
     //     usuario_id: usuario_id,
     //     servicio_id: servicio_id,
-    //    }
+    //    },
+   
     // });
-    // actualizarReserva.upadte = ({
+    // console.log(actualizarReserva, 'actualizarReserva')
+    // actualizarReserva.update = ({
     //   fecha: startDate,
     //   estado: 'actualizado'
     // })
@@ -135,6 +142,7 @@ router.post('/modificar-reserva', async(req, res) => {
     res.send({msg: 'Reserva actualizada correctamente.'})
 
   }catch (error) {
+    console.log(error, 'errorrrr')
   throw error;
 }
 
