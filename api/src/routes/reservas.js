@@ -90,7 +90,7 @@ router.post ("/servicios-reservas", async (req, res) => {
 
 
 //ELIMINAR RESERVA
-router.post('/eliminar-reserva', async(req, res) => {
+router.delete('/eliminar-reserva', async(req, res) => {
   const  {usuario_id, servicio_id} = req.body
 
   try {
@@ -113,22 +113,7 @@ router.put('/modificar-reserva', async(req, res) => {
   const  {usuario_id, servicio_id, startDate} = req.body
   
   try {
-    console.log(startDate, 'serviciooo')
-    console.log(usuario_id, 'usuario')
-    console.log(servicio_id, 'servicio')
-    // const actualizarReserva = await Reservas.findOne({
-    //   where: { 
-    //     usuario_id: usuario_id,
-    //     servicio_id: servicio_id,
-    //    },
-   
-    // });
-    // console.log(actualizarReserva, 'actualizarReserva')
-    // actualizarReserva.update = ({
-    //   fecha: startDate,
-    //   estado: 'actualizado'
-    // })
-    // await actualizarReserva.save();
+
     await Reservas.update({
       fecha: startDate,
       estado: 'actualizado'
@@ -138,7 +123,7 @@ router.put('/modificar-reserva', async(req, res) => {
         servicio_id: servicio_id
       }}
     )
-    
+
     res.send({msg: 'Reserva actualizada correctamente.'})
 
   }catch (error) {

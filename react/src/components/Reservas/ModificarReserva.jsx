@@ -16,7 +16,6 @@ const ModificarReserva = () => {
 
 
   const modificarReserva = async () => {
-    console.log(usuario_id, servicio_id, startDate, 'prueba')
     return await fetch("http://localhost:8000/reservas/modificar-reserva", {
         method: "PUT",
         body: JSON.stringify({ usuario_id, servicio_id, startDate }),

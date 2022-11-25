@@ -7,9 +7,6 @@ import Header from '../Header'
 const VisualizarReservas = () => {
   //Recoge username y lo guarda
   const usuarioLogeado = localStorage.getItem("userName");
-
-  const reservaCompleta = [];
-  const [reserva, setReserva] = useState([]);
   const navigate = useNavigate();
  
 
@@ -70,7 +67,7 @@ const VisualizarReservas = () => {
 
       });
     });
-  }, []);
+  }, [isOpen]);
  
 
   return (
