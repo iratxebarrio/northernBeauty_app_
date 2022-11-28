@@ -56,9 +56,8 @@ router.get("/mostrar-reservas/:username", async (req, res) => {
 });
 
 //EXTRAER NOMBRE Y DESCRIPCIÓN DE SERVICIOS RESERVADOS PARA MOSTRAR  EN VisualizarReservas.jsx
-router.post ("/servicios-reservas", async (req, res) => {
-  const {reservasCreadas, usuarioLogeado} = req.body;
-
+router.get ("/servicios-reservas/:username", async (req, res) => {
+  const usuarioLogeado = req.params.username
   try {
 
     const usuario = await Usuario.findOne({

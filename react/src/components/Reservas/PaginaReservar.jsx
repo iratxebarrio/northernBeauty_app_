@@ -23,13 +23,9 @@ const PaginaReservar = () => {
 
   //MOSTRAR EL SERVICIO SELECCIONADO A PARTIR DEL ID DEL PARAMS
   const getServiceInfo = async () => {
-    await fetch("http://localhost:8000/services/service-id", {
-      method: "POST",
-      body: JSON.stringify({ id }),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
+    await fetch(`http://localhost:8000/services/service-id/${id}`, {
+      method: "GET",
+
     })
       .then((res) => res.json())
       .then((data) => setServicio(data)

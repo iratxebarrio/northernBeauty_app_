@@ -4,13 +4,6 @@ const bcrypt = require('bcrypt')
 
 const {Usuario} = require('../models/models')
 
-/* GET home page. */
-router.get('/', (req, res)=> {
-    //   res.render('index', { title: 'Express' });
-    res.send('hola Registro')
-    });
-
-
 
     //REGISTRO
 router.post('/register', async (req, res) => {

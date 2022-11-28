@@ -13,7 +13,6 @@ const app = express()
 
 app.set('port', process.env.PORT || 8000)
 
-//Middlewares (cada vez que se manda una petición al servidor)
 
 connectDB();
 app.use(express.json())

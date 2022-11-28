@@ -1,0 +1,19 @@
+.despedida_container {
+    border: 1px black solid;
+ 
+  
+    .despedida_title {
+        text-align: center;
+        font-size: 40px;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        background-color: red;
+        
+    }
+    .despedida_img {
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    }
+}

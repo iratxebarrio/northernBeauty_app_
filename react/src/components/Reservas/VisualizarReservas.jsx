@@ -31,13 +31,8 @@ const VisualizarReservas = () => {
 
   //enviar al back reservasCreadas para traer con el servicio_id la información de los servicios solicitados.
   const getServiceReserved = async (reservasCreadas) => {
-    return await fetch("http://localhost:8000/reservas/servicios-reservas", {
-      method: "POST",
-      body: JSON.stringify({ reservasCreadas, usuarioLogeado }),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
+    return await fetch(`http://localhost:8000/reservas/servicios-reservas/${usuarioLogeado}`, {
+      method: "GET",
     })
       .then((res) => res.json())
       // .then((response) => responseReservas(response))
@@ -49,7 +44,6 @@ const VisualizarReservas = () => {
   };
 
   const eliminarReserva = (usuarioId, servicioId) => {
-    console.log(servicioId, 'ser', usuarioId, 'user')
     setServicioId(servicioId)
     setUsuarioId(usuarioId)
     setIsOpen(true)
