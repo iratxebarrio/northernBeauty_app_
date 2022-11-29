@@ -20,7 +20,7 @@ const Header = () => {
     return (
     <header className='header'>
         <div className='title_header'>
-            <img className='logo_header' src='/Images/makeup.png' alt="" />
+            <img className='logo_header' src='/Images/makeup.png' alt="mackeup" />
             <h1>Northern Beauty</h1>
         </div>
         <div className="nav_container">
@@ -72,7 +72,7 @@ const Header = () => {
                     Inicia Sesión
                 </button>
             }
-            <img className='user_img' src= '/Images/user.png' alt="" />
+            <img className='user_img' src= '/Images/user.png' alt="user-logo" />
         </div>
         </div>
     </header>

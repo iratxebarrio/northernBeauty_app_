@@ -81,7 +81,7 @@ const VisualizarReservas = () => {
                     src={
                       "/Images/service-main/" + reserva.servicioReservado.img
                     }
-                    alt=""
+                    alt="service"
                   />
                   <div>
                   <button
