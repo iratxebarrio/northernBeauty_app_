@@ -616,9 +616,9 @@ header .nav_container .boton-reservas-usuario {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   text-align: center;
 }
 
@@ -647,6 +647,173 @@ header .nav_container .boton-reservas-usuario {
   border-radius: 20px;
   padding: 10px;
   font-family: sans-serif;
+}
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.modal {
+  width: 250px;
+  height: 170px;
+  background: white;
+  color: white;
+  z-index: 10;
+  border-radius: 16px;
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+          box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+}
+
+.modal-cabecera {
+  height: 50px;
+  background: white;
+  overflow: hidden;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.modal-titulo {
+  margin: 0;
+  padding: 10px;
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+}
+
+.modal-contenido {
+  padding: 10px;
+  font-size: 14px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.modal-acciones {
+  position: absolute;
+  bottom: 2px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.modal-container-acciones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cerrar-modal {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  color: #2c3e50;
+  background: white;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.06);
+  position: absolute;
+  right: 0;
+  top: 0;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-top: -7px;
+  margin-right: -7px;
+}
+
+.cerrar-modal:hover {
+  -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+          box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
+  -webkit-transform: translate(-4px, 4px);
+          transform: translate(-4px, 4px);
+}
+
+.modal-eliminar-boton {
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 11px 28px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: none;
+  color: #fff;
+  background: #ff3e4e;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.modal-eliminar-boton:hover {
+  -webkit-box-shadow: 0 10px 20px -10px rgba(255, 62, 78, 0.6);
+          box-shadow: 0 10px 20px -10px rgba(255, 62, 78, 0.6);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  background: #ff3e4e;
+}
+
+.modal-cancelar-boton {
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 11px 28px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  border: none;
+  color: #2c3e50;
+  background: #fcfcfc;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.modal-cancelar-boton:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: none;
+          transform: none;
+  background: whitesmoke;
+}
+
+.primaryBtn {
+  margin: 20px 10px;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 13px 25px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  border: none;
+  color: white;
+  background: #185adb;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.primaryBtn:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+          box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
 }
 
 body {

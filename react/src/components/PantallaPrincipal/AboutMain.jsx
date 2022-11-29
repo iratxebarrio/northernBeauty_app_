@@ -18,7 +18,7 @@ const AboutMain = () => {
           <img
             className="img-beauty-salon"
             src="/Images/beauty-salon.jpg"
-            alt=""
+            alt="beauty-salon"
           />
         </div>
       </div>

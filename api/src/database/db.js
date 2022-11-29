@@ -10,7 +10,7 @@ const connectDB = async () => {
         await db.authenticate()
         console.log('DB conectada')
     }catch (error){
-        console.log('BD no conectada')
+        console.log('DB no conectada')
     }
 }
 

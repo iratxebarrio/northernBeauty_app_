@@ -1,28 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router";
 import ModalEliminarReserva from "../Modal/ModalEliminarReserva";
+import Header from '../Header'
 
 const VisualizarReservas = () => {
   //Recoge username y lo guarda
   const usuarioLogeado = localStorage.getItem("userName");
-  const reservaCompleta = [];
-  const [reserva, setReserva] = useState([]);
   const navigate = useNavigate();
+ 
 
   const [isOpen, setIsOpen] = useState(false);
   const [usuarioId, setUsuarioId] = useState('')
   const [servicioId, setServicioId] = useState('')
+
+  const [data, setData] = useState([])
+
+  
   
 
   //enviar al back petición con username para recoger las reservas de la bbdd
   const mostrarReservas = async () => {
-    return await fetch("http://localhost:8000/reservas/mostrar-reservas", {
-      method: "POST",
-      body: JSON.stringify({ usuarioLogeado }),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
+    return await fetch(`http://localhost:8000/reservas/mostrar-reservas/${usuarioLogeado}`, {
+      method: "GET",
+
     })
       .then((res) => res.json())
       .then((response) => response);
@@ -30,13 +31,8 @@ const VisualizarReservas = () => {
 
   //enviar al back reservasCreadas para traer con el servicio_id la información de los servicios solicitados.
   const getServiceReserved = async (reservasCreadas) => {
-    return await fetch("http://localhost:8000/reservas/servicios-reservas", {
-      method: "POST",
-      body: JSON.stringify({ reservasCreadas, usuarioLogeado }),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
+    return await fetch(`http://localhost:8000/reservas/servicios-reservas/${usuarioLogeado}`, {
+      method: "GET",
     })
       .then((res) => res.json())
       // .then((response) => responseReservas(response))
@@ -47,8 +43,7 @@ const VisualizarReservas = () => {
     //catch entra cuando hay error de API o BBDD
   };
 
-  const pruebaEliminar = (usuarioId, servicioId) => {
-    console.log(servicioId, 'ser', usuarioId, 'user')
+  const eliminarReserva = (usuarioId, servicioId) => {
     setServicioId(servicioId)
     setUsuarioId(usuarioId)
     setIsOpen(true)
@@ -61,9 +56,20 @@ const VisualizarReservas = () => {
     mostrarReservas().then(({ ok, userReservas, msg }) => {
       if (!ok) return alert(msg);
       getServiceReserved(userReservas).then((infoReservas) => {
+        setData(infoReservas)
         // console.log(prueba, 'prueba')
-        reservaCompleta.push(
-          infoReservas.map((reserva) => {
+
+      });
+    });
+  }, [isOpen]);
+ 
+
+  return (
+    <>
+    <Header />
+      <h2>Reservas</h2>
+      <div className="reservas-creadas-container">{          
+      data.map((reserva) => {
             return (
               <>
                 <div className="reserva-card">
@@ -75,24 +81,22 @@ const VisualizarReservas = () => {
                     src={
                       "/Images/service-main/" + reserva.servicioReservado.img
                     }
-                    alt=""
+                    alt="service"
                   />
                   <div>
-                    <button onClick={() => navigate("/modificar-reserva")}>
-                      Modificar reserva
-                    </button>
-                    {/* <button
+                  <button
                       onClick={() =>
                         navigate(
-                          `/eliminar-reserva/${reserva.reserva.usuario_id}/${reserva.reserva.servicio_id}`
+                          `/modificar-reserva/${reserva.reserva.usuario_id}/${reserva.reserva.servicio_id}`
                         )
                       }
                     >
-                      Eliminar reserva
-                    </button> */}
+                      Modificar reserva
+                    </button> 
+
                     <button
                      
-                      onClick={() => pruebaEliminar(reserva.reserva.usuario_id,reserva.reserva.servicio_id )}
+                      onClick={() => eliminarReserva(reserva.reserva.usuario_id,reserva.reserva.servicio_id )}
                     >
                       Eliminar Reserva
                     </button>
@@ -100,18 +104,7 @@ const VisualizarReservas = () => {
                 </div>
               </>
             );
-          })
-        );
-        setReserva([...reserva, reservaCompleta]);
-      });
-    });
-  }, []);
- 
-
-  return (
-    <>
-      <h2>Reservas</h2>
-      <div className="reservas-creadas-container">{reserva}</div>
+          })}</div>
       {isOpen && <ModalEliminarReserva setIsOpen={setIsOpen} usuario_id={usuarioId} servicio_id={servicioId}  />}
     </>
   );

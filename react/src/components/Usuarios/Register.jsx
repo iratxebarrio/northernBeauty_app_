@@ -73,7 +73,7 @@ function fetchRegistro() {
     <div className = "pruebLogin">
 
     <div className="login-box">
-      <a onClick={() =>  navigate('/')} href="#"><img className="imgCruz" src="Images/marca-x.png" alt="" /></a>
+      <a onClick={() =>  navigate('/')} href="#"><img className="imgCruz" src="Images/marca-x.png" alt="cruz-cancelar" /></a>
       <h3 className="login-title">Register</h3>
       <form>
         <div className="user-box">

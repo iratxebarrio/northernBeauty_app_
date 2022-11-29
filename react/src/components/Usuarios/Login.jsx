@@ -47,13 +47,8 @@ const responseLogin = (response) => {
 
 function fetchUserName(){
     setIsLoading(true);
-    fetch('http://localhost:8000/user/login', {
-        method: 'POST',
-        body: JSON.stringify({ userName, password }),
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        }
+    fetch(`http://localhost:8000/user/login/${userName}/${password}`, {
+        method: 'GET',
     })
     
     .then(response => response.json())
@@ -73,7 +68,7 @@ function fetchUserName(){
       
         {isLoading ? <LoadingSpinner /> : 
         <div className='login_container login-box'>
-            <a onClick={() =>  navigate('/')} href="#"><img className="imgCruz" src="Images/marca-x.png" alt="" /></a>
+            <a onClick={() =>  navigate('/')} href="#"><img className="imgCruz" src="Images/marca-x.png" alt="cruz-cancelar" /></a>
             <h3 className="login-title">Login</h3>
             <form>
                 <div className="user-box">

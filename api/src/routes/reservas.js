@@ -29,8 +29,9 @@ router.post("/crear-reserva", async (req, res) => {
 
 //MOSTRAR RESERVAS SEGUN EL USERNAME GUARDADO EN LOCALSTORAGE
 
-router.post("/mostrar-reservas", async (req, res) => {
-  const { usuarioLogeado } = req.body;
+router.get("/mostrar-reservas/:username", async (req, res) => {
+  const  usuarioLogeado = req.params.username;
+  //console.log(usuarioLogeado, 'reqqq')
   let idUser = "";
   try {
     const usuario = await Usuario.findAll({
@@ -55,9 +56,8 @@ router.post("/mostrar-reservas", async (req, res) => {
 });
 
 //EXTRAER NOMBRE Y DESCRIPCIÓN DE SERVICIOS RESERVADOS PARA MOSTRAR  EN VisualizarReservas.jsx
-router.post ("/servicios-reservas", async (req, res) => {
-  const {reservasCreadas, usuarioLogeado} = req.body;
-
+router.get ("/servicios-reservas/:username", async (req, res) => {
+  const usuarioLogeado = req.params.username
   try {
 
     const usuario = await Usuario.findOne({
@@ -89,7 +89,7 @@ router.post ("/servicios-reservas", async (req, res) => {
 
 
 //ELIMINAR RESERVA
-router.post('/eliminar-reserva', async(req, res) => {
+router.delete('/eliminar-reserva', async(req, res) => {
   const  {usuario_id, servicio_id} = req.body
 
   try {
@@ -97,9 +97,36 @@ router.post('/eliminar-reserva', async(req, res) => {
       usuario_id: usuario_id,
       servicio_id: servicio_id
     }})
+
     res.send({msg: 'Reserva eliminada correctamente.'})
 
   }catch (error) {
+  throw error;
+}
+
+})
+ 
+
+//MODIFICAR RESERVA
+router.put('/modificar-reserva', async(req, res) => {
+  const  {usuario_id, servicio_id, startDate} = req.body
+  
+  try {
+
+    await Reservas.update({
+      fecha: startDate,
+      estado: 'actualizado'
+    },{
+      where: {
+        usuario_id: usuario_id,
+        servicio_id: servicio_id
+      }}
+    )
+
+    res.send({msg: 'Reserva actualizada correctamente.'})
+
+  }catch (error) {
+    console.log(error, 'errorrrr')
   throw error;
 }
 

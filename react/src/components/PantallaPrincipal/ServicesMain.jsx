@@ -30,7 +30,7 @@ const ServicesMain = () => {
                   <img
                     className="service-box-img"
                     src={"/Images/service-main/" + service.img}
-                    alt=""
+                    alt="img-service"
                   />
 
                   {usuarioLogeado ? (
