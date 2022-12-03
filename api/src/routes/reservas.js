@@ -31,7 +31,6 @@ router.post("/crear-reserva", async (req, res) => {
 
 router.get("/mostrar-reservas/:username", async (req, res) => {
   const  usuarioLogeado = req.params.username;
-  //console.log(usuarioLogeado, 'reqqq')
   let idUser = "";
   try {
     const usuario = await Usuario.findAll({
@@ -126,7 +125,7 @@ router.put('/modificar-reserva', async(req, res) => {
     res.send({msg: 'Reserva actualizada correctamente.'})
 
   }catch (error) {
-    console.log(error, 'errorrrr')
+    //con un console.log(error) podemos saber detalladamente el error y asi solucionarlo.
   throw error;
 }
 

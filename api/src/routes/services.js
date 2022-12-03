@@ -22,7 +22,6 @@ router.get('/view-services', async(req, res) => {
 //RECIBE ID Y ENVIA EL SERVICIO CON ESE ID PARA MOSTRAR Y PODER HACER LA RESERVA
 router.get('/service-id/:id', async(req, res) => {
     const id = req.params.id
-    console.log('id', id)
     try {
         const viewService = await Servicio.findOne({where:{ _id : id}})
         if (!viewService) {

@@ -1,20 +1,4 @@
 
-
-export const empleadas = [
-    {
-        nombre: "Maria Fernandez",
-        profesion: "Titulada en Estética y Belleza",
-        experiencia: "Especializada desde hace más de 10 años, decidió crear Northern Beauty, donde ayudar a las personas a sentirte mejor.",
-        imagen:  "'Images/service-main/armario.jpg',"
-    },
-    {
-        nombre: "Aitana Velasco",
-        profesión: "Asesora de imagen personal",
-        experiencia: "Cuenta con mas de 5 años de experiencia asesorando para que las clientas aprendar a potenciar su imagen externa, potenciando sus cualidades.",
-         imagen:  "'Images/service-main/armario.jpg',"
-    }
-]
-
 export const dataTestimonials = [
     {
         icono: '/Images/citas.png',

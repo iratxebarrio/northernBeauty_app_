@@ -33,7 +33,6 @@ const onSubmit = (event) => {
 
 const responseLogin = (response) => {
     const { ok, userName } = response
-    console.log({ ok, userName })
     if (!ok) setOkLogin('Login incorrecto')
     else {
         localStorage.setItem('userName', userName) //guarda el valor en localStorage

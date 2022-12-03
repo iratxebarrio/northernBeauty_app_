@@ -11,7 +11,6 @@ registerLocale("es", es);
 const ModificarReserva = () => {
   const {usuario_id, servicio_id} = useParams()
   const [startDate, setStartDate] = useState(new Date());
-  console.log(startDate)
   const navigate = useNavigate();
 
 
