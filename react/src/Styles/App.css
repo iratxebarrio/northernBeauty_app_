@@ -498,33 +498,6 @@ header .nav_container .boton-reservas-usuario {
   color: red;
 }
 
-.despedida_container {
-  border: 1px black solid;
-}
-
-.despedida_container .despedida_title {
-  text-align: center;
-  font-size: 40px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: auto;
-  background-color: red;
-}
-
-.despedida_container .despedida_img {
-  width: 200px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 @-webkit-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
@@ -591,7 +564,7 @@ header .nav_container .boton-reservas-usuario {
 }
 
 .reservarContainerAll .reserva_container .fecha_reserva {
-  background-color: rgba(161, 155, 161, 0.767);
+  background-color: #d4a1df;
   text-align: center;
   height: 20px;
   font-size: 15px;
@@ -606,7 +579,7 @@ header .nav_container .boton-reservas-usuario {
   margin-top: 20px;
   padding: 7px;
   border-radius: 5px;
-  background-color: rgba(161, 155, 161, 0.767);
+  background-color: #d4a1df;
   padding: 10px;
 }
 

@@ -57,8 +57,6 @@ const VisualizarReservas = () => {
       if (!ok) return alert(msg);
       getServiceReserved(userReservas).then((infoReservas) => {
         setData(infoReservas)
-        // console.log(prueba, 'prueba')
-
       });
     });
   }, [isOpen]);

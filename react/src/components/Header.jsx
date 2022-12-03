@@ -6,8 +6,6 @@ import AboutMain from "./PantallaPrincipal/AboutMain";
 
 const Header = () => {
     const usuarioLogeado = localStorage.getItem('userName')
-
-    console.log(usuarioLogeado, 'user')
     const navigate = useNavigate()
 
     const cerrarSesion = () => {
